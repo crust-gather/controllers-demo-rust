@@ -1,0 +1,18 @@
+apiVersion: kube.rs/v1
+kind: Plan
+metadata:
+  name: lister
+spec:
+  instruction:
+    command: ls
+    args:
+    - /
+---
+apiVersion: kube.rs/v1
+kind: Plan
+metadata:
+  name: error
+spec:
+  instruction:
+    retryTimes: 5
+    command: blah
